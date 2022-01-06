@@ -56,4 +56,4 @@ yargs.command({
     }
 });
 
-export default yargs;
+export default yargs.argv;
