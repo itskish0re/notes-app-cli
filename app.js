@@ -36,3 +36,17 @@ yargs.command({
         console.log(argv.title);
     }
 });
+
+yargs.command({
+    command: 'show',
+    describe: "remove notes",
+    builder:{
+        title: {
+            describe: 'note title',
+            type: 'string',
+        }
+    },
+    handler: function(argv) {
+        console.log(argv.title);
+    }
+});
