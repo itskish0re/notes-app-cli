@@ -11,13 +11,13 @@ const saveNotes = function(notes){
     fs.writeFileSync("./notes.json",JSON.stringify(notes));
 }
 
-const addNote = function(data,notes){
+const addNote = function(data, notes){
     notes.notes.push(data);
     return notes;
 }
 
-const removeNote = function(notes){
-    notes.notes.pop();
+const removeNote = function(data, notes){
+    notes = notes.notes.filter((item) => item.title !== data);
     return notes;
 }
 
