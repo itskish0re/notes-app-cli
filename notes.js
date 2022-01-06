@@ -29,6 +29,14 @@ const printNotes = function(notes){
     return printData;
 };
 
+const checkDuplicate = function(data, notes){
+    notes.notes.forEach(function(item){
+        if(item.title === data)
+            return true;
+    })
+    return false;
+};
+
 export default {
     loadNotes,
     saveNotes,
