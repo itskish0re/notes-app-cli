@@ -39,7 +39,6 @@ yargs.command({
     handler: function(argv) {
         notesData = nt.removeNote(argv.title,notesData);
         nt.saveNotes(notesData)
-        // console.log(argv.title);
     }
 });
 
@@ -52,8 +51,8 @@ yargs.command({
             type: 'string',
         }
     },
-    handler: function(argv) {
-        console.log(argv.title);
+    handler: function() {
+        console.log(nt.printNotes(notesData));
     }
 });
 

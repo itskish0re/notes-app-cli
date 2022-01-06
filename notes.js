@@ -5,25 +5,34 @@ const loadNotes = function(){
     }catch{
         return {notes:[]};
     }
-}
+};
 
 const saveNotes = function(notes){
     fs.writeFileSync("./notes.json",JSON.stringify(notes));
-}
+};
 
 const addNote = function(data, notes){
     notes.notes.push(data);
     return notes;
-}
+};
 
 const removeNote = function(data, notes){
-    notes = notes.notes.filter((item) => item.title !== data);
+    notes.notes = notes.notes.filter((item) => item.title !== data);
     return notes;
-}
+};
+
+const printNotes = function(notes){
+    let printData = '';
+    notes.notes.forEach(function(item){
+        printData += `${item.title}\n${item.body}\n\n`
+    });
+    return printData;
+};
 
 export default {
     loadNotes,
     saveNotes,
     addNote,
-    removeNote
+    removeNote,
+    printNotes
 };
