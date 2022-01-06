@@ -21,7 +21,7 @@ const removeNote = function(notes){
     return notes;
 }
 
-export {
+export default {
     loadNotes,
     saveNotes,
     addNote,
