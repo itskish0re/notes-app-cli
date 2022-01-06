@@ -12,7 +12,7 @@ const saveNotes = function(notes){
 }
 
 const addNote = function(data,notes){
-    notes.notes.append(data);
+    notes.notes.push(data);
     return notes;
 }
 

@@ -18,7 +18,6 @@ yargs.command({
         }
     },
     handler: function(argv) {
-        console.log(argv.title);
         nt.addNote({
                 title: argv.title,
                 body: argv.body,
@@ -55,5 +54,4 @@ yargs.command({
         console.log(argv.title);
     }
 });
-
 export default yargs;
