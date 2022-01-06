@@ -1,5 +1,6 @@
 import nt from './notes.js';
 import yargs from "yargs";
+let notesData = nt.loadNotes();
 
 yargs.command({
     command: 'add',
@@ -18,6 +19,11 @@ yargs.command({
     },
     handler: function(argv) {
         console.log(argv.title);
+        nt.addNote({
+                title: argv.title,
+                body: argv.body,
+            },notesData);
+        nt.saveNotes(notesData);
     }
 });
 
