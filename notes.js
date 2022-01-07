@@ -30,10 +30,10 @@ const printNotes = function(notes){
 };
 
 const checkDuplicate = function(data, notes){
-    notes.notes.forEach(function(item){
-        if(item.title === data)
+    for (let item in notes) {
+        if(notes[item].title === data)
             return true;
-    })
+    }
     return false;
 };
 
@@ -42,5 +42,6 @@ export default {
     saveNotes,
     addNote,
     removeNote,
-    printNotes
+    printNotes,
+    checkDuplicate
 };

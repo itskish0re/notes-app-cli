@@ -56,4 +56,18 @@ yargs.command({
     }
 });
 
+yargs.command({
+    command: 'checkdup',
+    describe: "checks for duplicate",
+    builder:{
+        title: {
+            describe: 'note title',
+            type: 'string',
+        }
+    },
+    handler: function(argv) {
+        console.log(nt.checkDuplicate(argv.title,notesData.notes));
+    }
+});
+
 export default yargs;
